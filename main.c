@@ -45,7 +45,7 @@ void printstr(char *s)
     printf("\n");
 }
 
-int main()
+void game()
 {
     int uncorrect_sym_count;
     double start_time, end_time, time_delta;
@@ -65,5 +65,10 @@ int main()
     } else {
         printf("Вы ввели неправильно %d букв! Потрачено времени: %f сек.\n", uncorrect_sym_count, time_delta);
     }
+}
+
+int main()
+{
+    game();
     return 0;
 }
