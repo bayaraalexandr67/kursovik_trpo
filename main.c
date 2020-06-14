@@ -11,6 +11,17 @@ double wtime()
     return (double)t.tv_sec + (double)t.tv_usec * 1E-6;
 }
 
+void set_word(char *str, int max_lenght)
+{
+    str[0] = 'F';
+    str[1] = 'u';
+    str[2] = 'l';
+    str[3] = 'm';
+    str[4] = 'a';
+    str[5] = 'n';
+    str[6] = '\0';
+}
+
 int check(char *correct_word, char *entered_word)
 {
     int i = 0;
@@ -40,7 +51,8 @@ int main()
     double start_time, end_time, time_delta;
     printf("КЛАВИАТУРНЫЙ ТРЕНАЖЁР\n");
     printf("Пожалуйста, продублируйте слово: \n");
-    char word[MAX_ARR_LEN] = "abybucker";
+    char word[MAX_ARR_LEN];
+    set_word(&word, MAX_ARR_LEN);
     char entered_word[MAX_ARR_LEN];
     printstr(&word);
     start_time = wtime();
