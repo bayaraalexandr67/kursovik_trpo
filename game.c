@@ -11,6 +11,7 @@ void game()
     int round_counter = 0;
     int uncorrect_sym_count;
     int uncorrect_words = 0;
+    int err_counter = 0;
     double start_time, end_time, time_delta;
     double all_time = 0;
     double mid_time;
@@ -34,9 +35,12 @@ void game()
         } else {
             printf("Вы ввели неправильно %d букв! Потрачено времени: %f сек.\n", uncorrect_sym_count, time_delta);
             uncorrect_words += 1;
+            err_counter += uncorrect_sym_count;
         }
         round_counter += 1;
     }
+    float percent;
+    percent = (10 - uncorrect_words)/ 0.1;
     printf("---------------------\n");
     printf("-    Результаты:    -\n");
     printf("---------------------\n");
@@ -47,6 +51,19 @@ void game()
     mid_time = all_time / 10;
     printf("Среднее время:\n");
     printf("    %f сек.\n", mid_time);
+    printf("---------------------\n");
+    printf("-     Ввод слов:    -\n");
+    printf("---------------------\n");
+    printf("Введено правильно: \n");
+    printf("    %d слов\n", 10-uncorrect_words);
+    printf("Введено неправильно:\n");
+    printf("    %d слов\n", uncorrect_words);
+    if(uncorrect_words > 0){
+        printf("Допущено ошибок: \n");
+        printf("    %d\n", err_counter);
+    }
+    printf("Процент правильности: \n");
+    printf("    %g %%\n", percent);
     printf("---------------------\n");
 }
 
