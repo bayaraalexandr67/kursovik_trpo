@@ -2,6 +2,7 @@
 #include "setword.h"
 #include "printstr.h"
 #include "wtime.h"
+#include "check.h"
 
 #define MAX_ARR_LEN 12
 #define MAX_STR_LEN (MAX_ARR_LEN-1)
