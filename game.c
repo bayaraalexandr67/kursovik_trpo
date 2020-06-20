@@ -6,7 +6,7 @@
 #define MAX_ARR_LEN 12
 #define MAX_STR_LEN (MAX_ARR_LEN-1)
 
-void game()
+int game()
 {
     int round_counter = 0;
     int uncorrect_sym_count;
@@ -65,5 +65,20 @@ void game()
     printf("Процент правильности: \n");
     printf("    %g %%\n", percent);
     printf("---------------------\n");
+    int choise;
+    printf("1) Начать заново\n");
+    printf("2) Вернуться в главное меню\n");
+    printf("3) Выйти из игры\n");
+    printf("Выберите действие: ");
+    scanf("%d%*c", &choise);
+    if(choise == 1){
+        return 2;
+    }
+    if(choise == 2){
+        return 0;
+    }
+    if(choise == 3){
+        return 1;
+    }
 }
 
