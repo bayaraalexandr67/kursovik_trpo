@@ -1,5 +1,5 @@
-#ifndef GAME_H
-#define GAME_H
+#ifndef TMMD_H
+#define TMMD_H
 
 int mode_time();
 
