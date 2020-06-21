@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "game.h"
 #include "timemode.h"
 
@@ -6,6 +7,7 @@ int mode_select(){
     int select;
     int cont_flag = 0;
     int flag = 0;
+    system("clear");
     printf("ВЫБЕРИТЕ РЕЖИМ ИГРЫ:\n");
     printf("====================\n");
     printf("1) 10 СЛОВ\n");

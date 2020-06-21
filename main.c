@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "mmextras.h"
 
 int main()
@@ -7,6 +8,7 @@ int main()
     int exit_flag = 0;
 //    rezerve = mode_select();
     while(exit_flag == 0){
+        system("clear");
         printf("КЛАВИАТУРНЫЙ ТРЕНАЖЁР\n");
         printf("=====================\n");
         printf("1) Начать игру\n");

@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "setword.h"
 #include "printstr.h"
 #include "wtime.h"
@@ -18,7 +19,8 @@ int mode_time()
     double time_limit = 30;
     char correct_word[MT_MAX_ARR_LEN];
     char entered_word[MT_MAX_ARR_LEN];
-    printf("Режим \"На время\". Введите как можно больше слов за 30 секунд\n");
+    system("clear");
+    printf("Режим \"На время\"\n");
     current_time = wtime();
     start_time = wtime();
     while(current_time - start_time < time_limit){
@@ -31,8 +33,10 @@ int mode_time()
         incorrect_sym_count = check(&correct_word, &entered_word);
         current_time = wtime();
         if((current_time - start_time) > time_limit){
+            system("clear");
             printf("Время закончилось!\n");
         } else { 
+            system("clear");
             if(incorrect_sym_count == 0){
                 printf("Вы ввели слово правильно\n");
                 words_without_errs += 1;

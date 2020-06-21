@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "setword.h"
 #include "printstr.h"
 #include "wtime.h"
@@ -18,7 +19,8 @@ int game()
     double mid_time;
     char word[MAX_ARR_LEN];
     char entered_word[MAX_ARR_LEN];
-    printf("КЛАВИАТУРНЫЙ ТРЕНАЖЁР\n");
+    system("clear");
+    printf("Режим \"10 слов\"\n");
     while(round_counter < 10){
         printf("----------------------------------\n");
         printf("Раунд %d / 10\n", round_counter+1);
@@ -31,6 +33,7 @@ int game()
         time_delta = end_time - start_time;
         all_time += time_delta;
         uncorrect_sym_count = check(&word, &entered_word);
+        system("clear");
         if(uncorrect_sym_count == 0){
             printf("Вы ввели Правильное слово! Потрачено времени: %f сек.\n", time_delta);
         } else {
