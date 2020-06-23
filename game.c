@@ -25,14 +25,14 @@ int game()
         printf("----------------------------------\n");
         printf("Раунд %d / 10\n", round_counter+1);
         printf("Пожалуйста, продублируйте слово: \n");
-        set_word(&word, MAX_ARR_LEN);
-        printstr(&word);
+        set_word(word, MAX_ARR_LEN);
+        printstr(word);
         start_time = wtime();
         fgets(entered_word, MAX_STR_LEN, stdin);
         end_time = wtime();
         time_delta = end_time - start_time;
         all_time += time_delta;
-        uncorrect_sym_count = check(&word, &entered_word);
+        uncorrect_sym_count = check(word, entered_word);
         system("clear");
         if(uncorrect_sym_count == 0){
             printf("Вы ввели Правильное слово! Потрачено времени: %f сек.\n", time_delta);

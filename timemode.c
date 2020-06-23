@@ -27,10 +27,10 @@ int mode_time()
         printf("----------------------------------\n");
         printf("Введено слов: %g. Осталось времени: %f сек.\n", word_counter, time_limit-(current_time-start_time));
         printf("Пожалуйста, продублируйте слово: \n");
-        set_word(&correct_word, MT_MAX_ARR_LEN);
-        printstr(&correct_word);
+        set_word(correct_word, MT_MAX_ARR_LEN);
+        printstr(correct_word);
         fgets(entered_word, MT_MAX_STR_LEN, stdin);
-        incorrect_sym_count = check(&correct_word, &entered_word);
+        incorrect_sym_count = check(correct_word, entered_word);
         current_time = wtime();
         if((current_time - start_time) > time_limit){
             system("clear");
