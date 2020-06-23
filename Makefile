@@ -16,3 +16,6 @@ wtime.o : wtime.c
 	gcc -c wtime.c
 check.o : check.c
 	gcc -c check.c
+.PHONY : clean
+clean :
+	rm *.o
