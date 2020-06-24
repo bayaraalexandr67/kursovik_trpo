@@ -105,5 +105,6 @@ int mode_time(float *maxword)
     } else if(selected == 3){
         return 2;
     }
+    return 0;
 }
 

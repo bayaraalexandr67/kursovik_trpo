@@ -80,7 +80,7 @@ int mode_select(){
     if(select == 2){
         while(cont_flag == 0){
             flag = mode_time(&curr_max_words);
-            if(max_words < 0 || curr_max_words < max_words){
+            if(max_words < 0 || curr_max_words > max_words){
                 max_words = curr_max_words;
                 fp_rewrite_flag = 1;
             }

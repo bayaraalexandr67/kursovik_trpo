@@ -95,5 +95,6 @@ int game(double *mintime)
     if(choise == 3){
         return 2;
     }
+    return 0;
 }
 
