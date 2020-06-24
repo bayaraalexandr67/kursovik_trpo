@@ -8,10 +8,12 @@
 #define MT_MAX_ARR_LEN 12
 #define MT_MAX_STR_LEN (MT_MAX_ARR_LEN-1)
 
-int mode_time()
+int mode_time(float *maxword)
 {
     float word_counter = 0;
     int err_counter = 0;
+    float max_words;
+    max_words = *maxword;
     float words_without_errs = 0;
     int correct_word_counter = 0;
     int incorrect_sym_count;
@@ -80,6 +82,15 @@ int mode_time()
     }
     printf("Процент правильности: \n");
     printf("    %g %%\n", percent);
+    if(max_words < word_counter || max_words < 0){
+        printf("ВЫ УСТАНОВИЛИ НОВЫЙ РЕКОРД!\n");
+        if(max_words < 0){
+            printf("%g слов\n", word_counter);
+        } else {
+            printf("%g слов -> %g слов\n", max_words, word_counter);
+        }
+    }
+    *maxword = word_counter;
     printf("---------------------\n");
     int selected;
     printf("1) Начать заново\n");
@@ -88,11 +99,11 @@ int mode_time()
     printf("Выберите действие: ");
     scanf("%d%*c", &selected);
     if(selected == 1){
-        return 22;
+        return 11;
     } else if(selected == 2){
         return 0;
     } else if(selected == 3){
-        return 1;
+        return 2;
     }
 }
 

@@ -1,6 +1,6 @@
 #ifndef GAME_H
 #define GAME_H
 
-int game();
+int game(double *mintime);
 
 #endif

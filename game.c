@@ -8,9 +8,11 @@
 #define MAX_ARR_LEN 12
 #define MAX_STR_LEN (MAX_ARR_LEN-1)
 
-int game()
+int game(double *mintime)
 {
     int round_counter = 0;
+    double min_time;
+    min_time = *mintime;
     int uncorrect_sym_count;
     int uncorrect_words = 0;
     int err_counter = 0;
@@ -68,6 +70,15 @@ int game()
     }
     printf("Процент правильности: \n");
     printf("    %g %%\n", percent);
+    if(all_time < min_time || min_time < 0){
+        printf("ВЫ УСТАНОВИЛИ НОВЫЙ РЕКОРД!\n");
+        if(min_time > 0){
+            printf("%f сек. -> %f сек.\n", min_time, all_time);
+        } else {
+            printf("%f сек.\n", all_time);
+        }
+    }
+    *mintime = all_time;
     printf("---------------------\n");
     int choise;
     printf("1) Начать заново\n");
@@ -76,13 +87,13 @@ int game()
     printf("Выберите действие: ");
     scanf("%d%*c", &choise);
     if(choise == 1){
-        return 2;
+        return 1;
     }
     if(choise == 2){
         return 0;
     }
     if(choise == 3){
-        return 1;
+        return 2;
     }
 }
 
