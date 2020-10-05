@@ -7,8 +7,8 @@ debug : build_debug
 	gdb ./build_debug
 build_debug : main.c check.c game.c printstr.c setword.c wtime.c timemode.c mmextras.c check.h game.h mmextras.h printstr.h setword.h timemode.h wtime.h
 	gcc -O0 -g -o build_debug main.c check.c game.c printstr.c setword.c wtime.c timemode.c mmextras.c
-test_app : test.o test_main.o
-	gcc -o test_app test.o test_main.o
+test_app : test.o test_main.o check.o check.h
+	gcc -o test_app test.o test_main.o check.o
 test.o : test.c
 	gcc -c test.c
 test_main.o : test_main.c
